@@ -1,2 +1,31 @@
-.card { padding: 2rem; margin: 1rem; background: #1e3a8a; color: white; opacity: 0; }
-.title { opacity: 0; }
+body { margin: 0; background: #1a1a1a; color: white; font-family: sans-serif; overflow: hidden; }
+
+#scene { position: fixed; inset: 0; z-index: 0; }
+
+.number {
+  position: fixed; inset: 0; z-index: 1;
+  display: grid; place-items: center;
+  font-size: 30vw; font-weight: 900;
+  font-family:'goldman';
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+  opacity: 0;            /* animated to about 0.15 */
+}
+
+.hero { position: fixed; inset: 0; z-index: 2; display: grid; place-content: center; text-align: center; }
+.name { font-size: 6rem; margin: 0; opacity: 0; font-family:'bangers'; -webkit-text-stroke:8px #000000; paint-order:stroke fill;}
+.slogan { opacity: 0; }
+
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 3;
+  padding: 1rem; background: #1e3a8a;
+  transform: translateY(-100%);
+}
+
+.teal {
+    color:#00c1c1;
+}
+
+.red {
+    color:#f10101;
+}

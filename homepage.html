@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+  </style>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Knockout Robotics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Team Name Robotics</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/animejs@4/dist/bundles/anime.umd.min.js" defer></script>
-  <script src="script.js" defer></script>
+  <!-- 1. Import map: must come before any module script -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+      "animejs": "https://cdn.jsdelivr.net/npm/animejs@4/+esm"
+    }
+  }
+  </script>
+
+  <!-- 2. anime.js as a global, used by script.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/animejs@4/dist/bundles/anime.umd.min.js"></script>
+
+  <!-- 3. Your 2D animations -->
+  <script defer src="script.js"></script>
+
+  <!-- 4. The 3D model (last) -->
+  <script type="module" src="model.js"></script>
 </head>
 <body>
-  <h1 class="title">Knockout Robotics</h1>
-  <div class="card">Meet the Team</div>
-  <div class="card">Our Robot</div>
-  <div class="card">Sponsors</div>
+  <canvas id="scene"></canvas>
+  <div class="number">31017</div>
+  <div class="hero">
+    <h1 class="name"><span class="teal">Knock</span><span class="red">out</span></h1>
+    <p class="slogan">Your slogan here</p>
+  </div>
+  <nav class="topbar">Home · Robot · Team · Sponsors</nav>
 </body>
 </html>

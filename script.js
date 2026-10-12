@@ -1,16 +1,8 @@
-const { animate, stagger } = anime;
+const { createTimeline } = anime;
 
-// Slide the title in from the left
-animate('.title', {
-  x: [-200, 0],
-  opacity: [0, 1],
-  duration: 800,
-  ease: 'outExpo',
-});
+const tl = createTimeline({ defaults: { ease: 'outExpo', duration: 1000 } });
 
-// Cards pop in one after another
-animate('.card', {
-  y: [40, 0],
-  opacity: [0, 1],
-  delay: stagger(150),
-});
+tl.add('.number', { opacity: [0, 1.00] })
+  .add('.name',   { opacity: [0, 1], y: [30, 0] }, '-=600')
+  .add('.slogan', { opacity: [0, 1] }, '-=700')
+  .add('.topbar', { y: ['-100%', 0] }, '-=400');
